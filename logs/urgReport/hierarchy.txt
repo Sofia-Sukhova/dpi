@@ -1,0 +1,11 @@
+Design Hierarchy
+
+
+----------------
+SCORE  LINE   COND   BRANCH      
+ 63.13  67.92 --      58.33 test 
+  
+  ----------------
+  SCORE  LINE   COND   BRANCH         
+  100.00 100.00 --     100.00 counter 
+

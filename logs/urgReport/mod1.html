@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Author" content="<username>"> <meta name="GENERATOR" content="urg/version [en] (platform name) [urg]">
+<title>Unified Coverage Report :: Module :: test</title>
+<link type="text/css" rel="stylesheet" href="css/.urg.css">
+<link type="text/css" rel="stylesheet" href="css/.layout.css">
+<link type="text/css" rel="stylesheet" href="css/.breadcrumb.css">
+<script type="text/javascript" src="js/.jquery.js"></script>
+<script type="text/javascript" src="js/.jquery-ui.js"></script>
+<script type="text/javascript" src="js/.sortable.js"></script>
+<script type="text/javascript" src="js/.layout.js"></script>
+<script type="text/javascript" src="js/.breadcrumb.js"></script>
+<script type="text/javascript">
+var layout, westLayout, centerLayout;
+$(document).ready(function () {
+  if ($("#north-bread-crumb")) {
+    $("#north-bread-crumb").jBreadCrumb({easing:'swing'})
+  }
+  layout = $("body").layout({ 
+    resizable: true,
+    spacing_open: 4,
+    spacing_closed: 4,
+    north: {
+      size: 76
+    },
+    south: {
+      size: 45,
+      initClosed: true
+    },
+    west: {
+      size: 500,
+      resizable: true,
+      initClosed: false
+    }
+  });
+  centerLayout = $('div.ui-layout-center').layout({
+    north__paneSelector: ".ui-layout-center-inner-north",
+    center__paneSelector: ".ui-layout-center-inner-center", 
+    north__size: 50,
+    spacing_open: 4,
+    spacing_closed: 4
+  });
+});
+</script>
+</head>
+<body onLoad="initPage();"><div class="ui-layout-north">
+<div class="logo"></div>
+<center class="pagetitle">Module Definition</center>
+<div align="center"><a href="dashboard.html" ><b>dashboard</b></a> | <a href="hierarchy.html" ><b>hierarchy</b></a> | <a href="modlist.html" ><b>modlist</b></a> | groups | <a href="tests.html" ><b>tests</b></a> | asserts</div>
+
+</div>
+<div class="ui-layout-west">
+<div name='tag_test'>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module : <a href="#"  onclick="showContent('tag_test')">test</a></span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>BRANCH</td></tr><tr>
+<td class="s5 cl rt"> 54.88</td>
+<td class="s6 cl rt"><a href="mod1.html#Line" > 65.31</a></td>
+<td class="wht cl rt"></td>
+<td class="s4 cl rt"><a href="mod1.html#Branch" > 44.44</a></td>
+</tr></table><br clear=all>
+<span class=repname>Source File(s) : </span>
+<br clear=all>
+<a href="javascript:void(0);"  onclick="openSrcFile('/export/data/verif/bochkareva_s/dpi/dpi/build/../src/test.sv')">/export/data/verif/bochkareva_s/dpi/dpi/build/../src/test.sv</a><br clear=all>
+<br clear=all>
+<span class=repname>Module self-instances :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>BRANCH</td></tr><tr>
+<td class="wht cl wordwrap"><a href="mod1.html#inst_tag_1"  onclick="showContent('inst_tag_1')">test</a></td>
+<td class="s5 cl rt"> 54.88</td>
+<td class="s6 cl rt"><a href="mod1.html#Line" > 65.31</a></td>
+<td class="wht cl rt"></td>
+<td class="s4 cl rt"><a href="mod1.html#Branch" > 44.44</a></td>
+</tr></table></div>
+</div>
+<br clear=all>
+<div name='tag_test'>
+<hr>
+<a name="inst_tag_1"></a>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module Instance : <a href="hierarchy.html#tag_urg_inst_1" >test</a></span>
+<br clear=all>
+<br clear=all>
+<span class=repname>Instance :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>BRANCH</td></tr><tr>
+<td class="s5 cl rt"> 54.88</td>
+<td class="s6 cl rt"><a href="mod1.html#Line" > 65.31</a></td>
+<td class="wht cl rt"></td>
+<td class="s4 cl rt"><a href="mod1.html#Branch" > 44.44</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Instance's subtree :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>BRANCH</td></tr><tr>
+<td class="s6 cl rt"> 63.13</td>
+<td class="s6 cl rt"> 67.92</td>
+<td class="wht cl rt"></td>
+<td class="s5 cl rt"> 58.33</td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Parent : </span>
+<br clear=all>
+<span class=inst>none</span>
+<br clear=all>
+<br clear=all>
+<span class=repname>Subtrees :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>BRANCH</td></tr><tr>
+<td class="wht cl wordwrap"><a href="mod0.html#inst_tag_0" id="tag_urg_inst_0">counter</a></td>
+<td class="s10 cl rt">100.00</td>
+<td class="s10 cl rt">100.00</td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt">100.00</td>
+</tr></table><br clear=all>
+</div>
+</div>
+<hr>
+Since this is the module's only instance, the coverage report is the same as for the module.</div>
+<div class="ui-layout-center">
+<div class="ui-layout-center-inner-center">
+<div name='tag_test'>
+<a name="Line"></a>
+Line Coverage for Module : <a href="mod1.html" >test</a><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="4" width="82">
+<tr><th></th><th>Line No.</th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s6"><td class="lf">TOTAL</td><td></td><td>49</td><td>32</td><td>65.31</td></tr>
+<tr class="s0"><td class="lf">ROUTINE</td><td>6</td><td>1</td><td>0</td><td>0.00</td></tr>
+<tr class="s10"><td class="lf">INITIAL</td><td>34</td><td>4</td><td>4</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ROUTINE</td><td>40</td><td>5</td><td>5</td><td>100.00</td></tr>
+<tr class="s7"><td class="lf">ROUTINE</td><td>48</td><td>10</td><td>8</td><td>80.00</td></tr>
+<tr class="s8"><td class="lf">ALWAYS</td><td>74</td><td>6</td><td>5</td><td>83.33</td></tr>
+<tr class="s4"><td class="lf">INITIAL</td><td>89</td><td>23</td><td>10</td><td>43.48</td></tr>
+</table>
+<pre class="code"><br clear=all>
+5                       
+6          <font color = "red">0/1     ==>  import &quot;DPI-C&quot; function int grey_count( input int tick, input int size);</font>
+7                       
+8                       reg clk;
+9                       reg rst;
+10                      reg [SIZE - 1:0] res;
+11                      
+12                      string filename;
+13                      string line;
+14                      int file;
+15                      
+16                      int real_res;
+17                      int arg0;
+18                      int arg1;
+19                      int tick;
+20                      int rand_num;
+21                      
+22                      wire inc = (tick &lt; arg0 + arg1);
+23                      
+24                      Gray_counter #( .SIZE(SIZE)) counter (
+25                        .clk (clk),
+26                        .rst (rst),
+27                        .inc (inc),
+28                        .gray (res)
+29                      );
+30                      
+31                      //make clk
+32                      initial
+33                      begin
+34         1/1              clk = 0;
+35         3/3              forever #1 clk = ~clk;
+36                      end
+37                      
+38                      //task reset
+39                      task reset();
+40         2/2              rst = 0; @(negedge clk)
+41         2/2              rst = 1; @(negedge clk)
+42         1/1              rst = 0;
+43                      endtask
+44                      
+45                      
+46                      //test function
+47                      task test_input();
+48         1/1              reset();
+49         1/1              $display(&quot;Testing counter from %d on %d ticks&quot;, arg0, arg1);
+50                      
+51         2/2              for ( tick = 0; tick &lt; arg1 + arg0; tick ++) @(posedge clk)
+52                          begin
+53                              //this pause need for reaching internal arg0 state in actual GreyCounter
+54         1/1                  if ( tick &gt;= arg0)
+55                              begin
+56         1/1                      real_res = grey_count( tick, SIZE);
+57         1/1                      if ( res != real_res)
+58                                  begin
+59         <font color = "red">0/1     ==>                  $display(&quot; %d : %d != %d&quot;, tick, real_res, res);</font>
+60         <font color = "red">0/1     ==>                  $fatal( 1, &quot;Test failed!&quot;);</font>
+61                                  end
+                        MISSING_ELSE
+62                              end
+                        MISSING_ELSE
+63                          end
+64         1/1              $display(&quot; Test passed!&quot;);
+65                      endtask
+66                      
+67                      //timeout
+68                      reg dut_running;
+69                      int timer;
+70                      parameter TIMEOUT=1000;
+71                      
+72                      always @(posedge clk)
+73                      begin
+74         1/1              if (dut_running)
+75         1/1                  timer &lt;= timer + 1;
+76                          else
+77         <font color = "red">0/1     ==>          timer &lt;= 0;</font>
+78                      
+79         1/1              if (timer == TIMEOUT + arg1 + arg0)
+80                          begin
+81         1/1                  $display(&quot;Timeout! DUT has been running too long.&quot;);
+82         1/1                  $finish;
+83                          end
+                        MISSING_ELSE
+84                      end
+85                      
+86                      //parsing input elements
+87                      initial
+88                      begin
+89         1/1              $display(&quot;START&quot;);
+90         1/1              if ($value$plusargs(&quot;arg0=%d&quot;, arg0))
+91                          begin
+92         <font color = "red">0/1     ==>          if ($value$plusargs(&quot;arg1=%d&quot;, arg1))</font>
+93                              begin
+94         <font color = "red">0/1     ==>  	    dut_running = 1;</font>
+95         <font color = "red">0/1     ==>              test_input();</font>
+96         <font color = "red">0/1     ==>  	    dut_running = 0;</font>
+97                              end
+98                              else
+99                              begin
+100        <font color = "red">0/1     ==>              $display(&quot;Arg1 missed!&quot;);</font>
+101                             end
+102                         end
+103        1/1              else if ($value$plusargs(&quot;file=%s&quot;, filename))
+104                         begin
+105        <font color = "red">0/1     ==>          file = $fopen(filename, &quot;r&quot;);</font>
+106        <font color = "red">0/1     ==>          while ($fgets(line, file))</font>
+107                             begin
+108        <font color = "red">0/1     ==>              $sscanf(line, &quot;%d %d&quot;, arg0, arg1);</font>
+109        <font color = "red">0/1     ==>  	    dut_running = 1;</font>
+110        <font color = "red">0/1     ==>              test_input();</font>
+111        <font color = "red">0/1     ==>  	    dut_running = 0;</font>
+112                             end
+113                         end
+114        1/1              else if ($value$plusargs(&quot;random_mode=%d&quot;, rand_num))
+115                         begin
+116        1/1                  for (int i = 0; i &lt; rand_num; i++)
+117                             begin
+118        1/1                      arg0 = $urandom();
+119        1/1                      arg1 = $urandom();
+120        1/1          	    dut_running = 1;
+121        1/1                      test_input();
+122        1/1          	    dut_running = 0;
+123                             end
+124                         end
+125                         else
+126                         begin
+127        <font color = "red">0/1     ==>  	$display(&quot;wrong using&quot;);</font>
+128                         end
+129        <font color = "red">0/1     ==>      $finish;</font>
+</pre>
+<hr>
+<a name="Branch"></a>
+Branch Coverage for Module : <a href="mod1.html" >test</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Line No.</th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s4">
+<td>Branches</td>
+<td></td>
+<td class="rt">9</td>
+<td class="rt">4</td>
+<td class="rt">44.44 </td>
+</tr><tr class="s5">
+<td>IF</td>
+<td class="rt">74</td>
+<td class="rt">2</td>
+<td class="rt">1</td>
+<td class="rt">50.00 </td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">79</td>
+<td class="rt">2</td>
+<td class="rt">2</td>
+<td class="rt">100.00</td>
+</tr><tr class="s2">
+<td>IF</td>
+<td class="rt">90</td>
+<td class="rt">5</td>
+<td class="rt">1</td>
+<td class="rt">20.00 </td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+74             if (dut_running)
+               <font color = "red">-1-</font>  
+75                 timer <= timer + 1;
+           <font color = "green">        ==></font>
+76             else
+77                 timer <= 0;
+           <font color = "red">        ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td>Not Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+79             if (timer == TIMEOUT + arg1 + arg0)
+               <font color = "green">-1-</font>  
+80             begin
+81                 $display("Timeout! DUT has been running too long.");
+           <font color = "green">        ==></font>
+82                 $finish;
+83             end
+               MISSING_ELSE
+           <font color = "green">    ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+90             if ($value$plusargs("arg0=%d", arg0))
+               <font color = "red">-1-</font>  
+91             begin
+92                 if ($value$plusargs("arg1=%d", arg1))
+                   <font color = "red">-2-</font>  
+93                 begin
+94         	    dut_running = 1;
+           <font color = "red">	    ==></font>
+95                     test_input();
+96         	    dut_running = 0;
+97                 end
+98                 else
+99                 begin
+100                    $display("Arg1 missed!");
+           <font color = "red">            ==></font>
+101                end
+102            end
+103            else if ($value$plusargs("file=%s", filename))
+                    <font color = "red">-3-</font>  
+104            begin
+105                file = $fopen(filename, "r");
+           <font color = "red">        ==></font>
+106                while ($fgets(line, file))
+107                begin
+108                    $sscanf(line, "%d %d", arg0, arg1);
+109        	    dut_running = 1;
+110                    test_input();
+111        	    dut_running = 0;
+112                end
+113            end
+114            else if ($value$plusargs("random_mode=%d", rand_num))
+                    <font color = "red">-4-</font>  
+115            begin
+116                for (int i = 0; i < rand_num; i++)
+           <font color = "green">        ==></font>
+117                begin
+118                    arg0 = $urandom();
+119                    arg1 = $urandom();
+120        	    dut_running = 1;
+121                    test_input();
+122        	    dut_running = 0;
+123                end
+124            end
+125            else
+126            begin
+127        	$display("wrong using");
+           <font color = "red">	==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>-4-</th><th nowrap width=80>Status</th></tr><tr class="uRed">
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uRed">
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td>Not Covered</td>
+</tr></table><br clear=all>
+</div>
+</div>
+<div class="ui-layout-center-inner-north">
+<div id="center-bread-crumb" class="breadCrumb module urg-margin-bottom">
+  <ul name="inst_tag_1">
+    <li>
+      <a href="#Line">Line</a>    </li>
+    <li>
+      <a href="#Branch">Branch</a>    </li>
+  </ul>
+  <ul name="tag_test">
+    <li>
+      <a href="#Line">Line</a>    </li>
+    <li>
+      <a href="#Branch">Branch</a>    </li>
+  </ul>
+</div>
+</div>
+</div>
+<div class="ui-layout-south">
+<table align=center><tr><td class="s0 cl">0%</td>
+<td class="s1 cl">10%</td>
+<td class="s2 cl">20%</td>
+<td class="s3 cl">30%</td>
+<td class="s4 cl">40%</td>
+<td class="s5 cl">50%</td>
+<td class="s6 cl">60%</td>
+<td class="s7 cl">70%</td>
+<td class="s8 cl">80%</td>
+<td class="s9 cl">90%</td>
+<td class="s10 cl">100%</td></tr></table></div>
+</body>
+</html>

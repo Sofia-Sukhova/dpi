@@ -1,0 +1,27 @@
+Dashboard
+
+Date: Wed May 14 20:26:17 2025
+
+User: bochkareva_s
+
+Version: O-2018.09-SP2
+Command line: urg -dir simv.vdb -metric line+cond+branch -format both
+Number of tests: 1
+
+-------------------------------------------------------------------------------
+Total Coverage Summary 
+SCORE  LINE   COND   BRANCH 
+ 63.13  67.92 --      58.33 
+
+
+-------------------------------------------------------------------------------
+Hierarchical coverage data for top-level instances 
+SCORE  LINE   COND   BRANCH NAME 
+ 63.13  67.92 --      58.33 test 
+
+
+-------------------------------------------------------------------------------
+Total Module Definition Coverage Summary 
+SCORE  LINE   COND   BRANCH 
+ 63.13  67.92 --      58.33 
+

@@ -1,0 +1,13 @@
+Design Module List
+
+Total Module Definition Coverage Summary 
+SCORE  LINE   COND   BRANCH 
+ 62.76  71.67 --      53.85 
+
+
+Total modules in report: 2
+-------------------------------------------------------------------------------
+SCORE  LINE   COND   BRANCH NAME         
+ 54.82  69.64 --      40.00 test         
+100.00 100.00 --     100.00 Gray_counter 
+

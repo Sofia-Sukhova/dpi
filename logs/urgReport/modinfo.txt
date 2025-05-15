@@ -1,0 +1,386 @@
+===============================================================================
+Module : test
+===============================================================================
+SCORE  LINE   COND   BRANCH 
+ 54.88  65.31 --      44.44 
+
+Source File(s) : 
+
+/export/data/verif/bochkareva_s/dpi/dpi/build/../src/test.sv
+
+Module self-instances :
+
+SCORE  LINE   COND   BRANCH NAME 
+ 54.88  65.31 --      44.44 test 
+
+
+
+-------------------------------------------------------------------------------
+Line Coverage for Module : test
+
+             Line No.   Total   Covered  Percent
+TOTAL                       49       32    65.31
+ROUTINE             6        1        0     0.00
+INITIAL            34        4        4   100.00
+ROUTINE            40        5        5   100.00
+ROUTINE            48       10        8    80.00
+ALWAYS             74        6        5    83.33
+INITIAL            89       23       10    43.48
+
+5                       
+6          0/1     ==>  import "DPI-C" function int grey_count( input int tick, input int size);
+7                       
+8                       reg clk;
+9                       reg rst;
+10                      reg [SIZE - 1:0] res;
+11                      
+12                      string filename;
+13                      string line;
+14                      int file;
+15                      
+16                      int real_res;
+17                      int arg0;
+18                      int arg1;
+19                      int tick;
+20                      int rand_num;
+21                      
+22                      wire inc = (tick < arg0 + arg1);
+23                      
+24                      Gray_counter #( .SIZE(SIZE)) counter (
+25                        .clk (clk),
+26                        .rst (rst),
+27                        .inc (inc),
+28                        .gray (res)
+29                      );
+30                      
+31                      //make clk
+32                      initial
+33                      begin
+34         1/1              clk = 0;
+35         3/3              forever #1 clk = ~clk;
+36                      end
+37                      
+38                      //task reset
+39                      task reset();
+40         2/2              rst = 0; @(negedge clk)
+41         2/2              rst = 1; @(negedge clk)
+42         1/1              rst = 0;
+43                      endtask
+44                      
+45                      
+46                      //test function
+47                      task test_input();
+48         1/1              reset();
+49         1/1              $display("Testing counter from %d on %d ticks", arg0, arg1);
+50                      
+51         2/2              for ( tick = 0; tick < arg1 + arg0; tick ++) @(posedge clk)
+52                          begin
+53                              //this pause need for reaching internal arg0 state in actual GreyCounter
+54         1/1                  if ( tick >= arg0)
+55                              begin
+56         1/1                      real_res = grey_count( tick, SIZE);
+57         1/1                      if ( res != real_res)
+58                                  begin
+59         0/1     ==>                  $display(" %d : %d != %d", tick, real_res, res);
+60         0/1     ==>                  $fatal( 1, "Test failed!");
+61                                  end
+                        MISSING_ELSE
+62                              end
+                        MISSING_ELSE
+63                          end
+64         1/1              $display(" Test passed!");
+65                      endtask
+66                      
+67                      //timeout
+68                      reg dut_running;
+69                      int timer;
+70                      parameter TIMEOUT=1000;
+71                      
+72                      always @(posedge clk)
+73                      begin
+74         1/1              if (dut_running)
+75         1/1                  timer <= timer + 1;
+76                          else
+77         0/1     ==>          timer <= 0;
+78                      
+79         1/1              if (timer == TIMEOUT + arg1 + arg0)
+80                          begin
+81         1/1                  $display("Timeout! DUT has been running too long.");
+82         1/1                  $finish;
+83                          end
+                        MISSING_ELSE
+84                      end
+85                      
+86                      //parsing input elements
+87                      initial
+88                      begin
+89         1/1              $display("START");
+90         1/1              if ($value$plusargs("arg0=%d", arg0))
+91                          begin
+92         0/1     ==>          if ($value$plusargs("arg1=%d", arg1))
+93                              begin
+94         0/1     ==>  	    dut_running = 1;
+95         0/1     ==>              test_input();
+96         0/1     ==>  	    dut_running = 0;
+97                              end
+98                              else
+99                              begin
+100        0/1     ==>              $display("Arg1 missed!");
+101                             end
+102                         end
+103        1/1              else if ($value$plusargs("file=%s", filename))
+104                         begin
+105        0/1     ==>          file = $fopen(filename, "r");
+106        0/1     ==>          while ($fgets(line, file))
+107                             begin
+108        0/1     ==>              $sscanf(line, "%d %d", arg0, arg1);
+109        0/1     ==>  	    dut_running = 1;
+110        0/1     ==>              test_input();
+111        0/1     ==>  	    dut_running = 0;
+112                             end
+113                         end
+114        1/1              else if ($value$plusargs("random_mode=%d", rand_num))
+115                         begin
+116        1/1                  for (int i = 0; i < rand_num; i++)
+117                             begin
+118        1/1                      arg0 = $urandom();
+119        1/1                      arg1 = $urandom();
+120        1/1          	    dut_running = 1;
+121        1/1                      test_input();
+122        1/1          	    dut_running = 0;
+123                             end
+124                         end
+125                         else
+126                         begin
+127        0/1     ==>  	$display("wrong using");
+128                         end
+129        0/1     ==>      $finish;
+
+-------------------------------------------------------------------------------
+Branch Coverage for Module : test
+         Line No. Total Covered Percent 
+Branches          9     4       44.44   
+IF       74       2     1       50.00   
+IF       79       2     2       100.00  
+IF       90       5     1       20.00   
+
+
+74             if (dut_running)
+               -1-  
+75                 timer <= timer + 1;
+                   ==>
+76             else
+77                 timer <= 0;
+                   ==>
+
+Branches:
+
+-1- Status      
+1   Covered     
+0   Not Covered 
+
+
+79             if (timer == TIMEOUT + arg1 + arg0)
+               -1-  
+80             begin
+81                 $display("Timeout! DUT has been running too long.");
+                   ==>
+82                 $finish;
+83             end
+               MISSING_ELSE
+               ==>
+
+Branches:
+
+-1- Status  
+1   Covered 
+0   Covered 
+
+
+90             if ($value$plusargs("arg0=%d", arg0))
+               -1-  
+91             begin
+92                 if ($value$plusargs("arg1=%d", arg1))
+                   -2-  
+93                 begin
+94         	    dut_running = 1;
+           	    ==>
+95                     test_input();
+96         	    dut_running = 0;
+97                 end
+98                 else
+99                 begin
+100                    $display("Arg1 missed!");
+                       ==>
+101                end
+102            end
+103            else if ($value$plusargs("file=%s", filename))
+                    -3-  
+104            begin
+105                file = $fopen(filename, "r");
+                   ==>
+106                while ($fgets(line, file))
+107                begin
+108                    $sscanf(line, "%d %d", arg0, arg1);
+109        	    dut_running = 1;
+110                    test_input();
+111        	    dut_running = 0;
+112                end
+113            end
+114            else if ($value$plusargs("random_mode=%d", rand_num))
+                    -4-  
+115            begin
+116                for (int i = 0; i < rand_num; i++)
+                   ==>
+117                begin
+118                    arg0 = $urandom();
+119                    arg1 = $urandom();
+120        	    dut_running = 1;
+121                    test_input();
+122        	    dut_running = 0;
+123                end
+124            end
+125            else
+126            begin
+127        	$display("wrong using");
+           	==>
+
+Branches:
+
+-1- -2- -3- -4- Status      
+1   1   -   -   Not Covered 
+1   0   -   -   Not Covered 
+0   -   1   -   Not Covered 
+0   -   0   1   Covered     
+0   -   0   0   Not Covered 
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : test
+===============================================================================
+
+Instance :
+
+SCORE  LINE   COND   BRANCH 
+ 54.88  65.31 --      44.44 
+
+
+Instance's subtree :
+
+SCORE  LINE   COND   BRANCH 
+ 63.13  67.92 --      58.33 
+
+
+Module : 
+
+SCORE  LINE   COND   BRANCH NAME 
+ 54.88  65.31 --      44.44 test 
+
+
+Parent : 
+
+none
+----------------
+
+
+Subtrees :
+
+SCORE  LINE   COND   BRANCH NAME    
+100.00 100.00 --     100.00 counter 
+
+
+
+-------------------------------------------------------------------------------
+Since this is the module's only instance, the coverage report is the same as for the module.
+===============================================================================
+Module : Gray_counter
+===============================================================================
+SCORE  LINE   COND   BRANCH 
+100.00 100.00 --     100.00 
+
+Source File(s) : 
+
+/export/data/verif/bochkareva_s/dpi/dpi/build/../src/grey.v
+
+Module self-instances :
+
+SCORE  LINE   COND   BRANCH NAME         
+100.00 100.00 --     100.00 test.counter 
+
+
+
+-------------------------------------------------------------------------------
+Line Coverage for Module : Gray_counter
+
+             Line No.   Total   Covered  Percent
+TOTAL                        4        4   100.00
+ALWAYS             13        4        4   100.00
+
+12                      always @(posedge clk) begin
+13         2/2            if    (rst) bin_counter <= {SIZE{1'b0}};
+14         2/2            else if (inc) bin_counter <= bin_counter + 1'b1;
+                        MISSING_ELSE
+
+-------------------------------------------------------------------------------
+Branch Coverage for Module : Gray_counter
+         Line No. Total Covered Percent 
+Branches          3     3       100.00  
+IF       13       3     3       100.00  
+
+
+13           if    (rst) bin_counter <= {SIZE{1'b0}};
+             -1-  
+             ==>
+14           else if (inc) bin_counter <= bin_counter + 1'b1;
+                  -2-  
+             ==>
+             MISSING_ELSE
+             ==>
+
+Branches:
+
+-1- -2- Status  
+1   -   Covered 
+0   1   Covered 
+0   0   Covered 
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : test.counter
+===============================================================================
+
+Instance :
+
+SCORE  LINE   COND   BRANCH 
+100.00 100.00 --     100.00 
+
+
+Instance's subtree :
+
+SCORE  LINE   COND   BRANCH 
+100.00 100.00 --     100.00 
+
+
+Module : 
+
+SCORE  LINE   COND   BRANCH NAME         
+100.00 100.00 --     100.00 Gray_counter 
+
+
+Parent : 
+
+SCORE  LINE   COND   BRANCH NAME 
+ 54.88  65.31 --      44.44 test 
+
+
+Subtrees :
+
+
+no children
+----------------
+
+
+-------------------------------------------------------------------------------
+Since this is the module's only instance, the coverage report is the same as for the module.
